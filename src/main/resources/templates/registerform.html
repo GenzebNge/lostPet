@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <th:block th:insert="base :: header"></th:block>
+</head>
+<body>
+<div th:replace="base :: nav"></div>
+
+<br>
+<br>
+
+<hr/>
+
+<div class="container bg-light ">
+    <div class="my-5 "></div>
+    <div class="my-4 py-5" align="center">
+        <form autocomplete="off"      action="/register"      method="post">
+
+            <div>
+                <h5>
+                    First Name:    <input type="text" id="firstName"  name="firstName"/><br/>
+                </h5>
+            </div>
+
+            <div>
+                <h5>
+                    Last Name:    <input type="text" id="lastName"  name="lastName" /><br/>
+                </h5>
+
+            </div>
+            <div>
+                <h5>
+
+
+                    Email:   <input type="text" id="email" name="email" /><br/>
+                </h5>
+            </div>
+            <div>
+                <h5>
+
+                    Username:    <input type="text" id="username"  name="username" /><br/>
+                </h5>
+            </div>
+
+            <div>
+                <h5>
+
+                    Password:    <input type="password" id="password" name="password" /><br/>
+                </h5>
+            </div>
+
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </div>
+</div>
+<div class="emptySpace"></div>
+<div class="emptySpace"></div>
+<div th:replace="base:: footer"></div>
+</body>
+</html>
