@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <th:block th:insert="base :: header"></th:block>
+</head>
+<body>
+
+<div th:replace="base :: nav"></div>
+
+<a href="/update"> Update </a><br/>
+Name:<span th:text="${pet.name}"></span><br />
+Date :<span th:text="${pet.date}"></span><br />
+Description :<p th:text="${pet.description}"></p>
+Status :<span th:text="${pet.status}" ></span><br />
+File :<span th:text="${pet.image}" ></span><br />
+
+<td>
+
+    <span th:if="${currentUser == pet.user.id}"><a th:href="@{/update/{id}(id=${pet.id})}"> Update Post </a>  </span>
+</td>
+<a th:href="@{/delete/{id}(id=${pet.id})}">Delete this message</a>
+
+
+
+<div th:replace="base:: footer"></div>
+</body>
+</html>

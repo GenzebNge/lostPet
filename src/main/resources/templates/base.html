@@ -16,34 +16,65 @@
 
 <div th:fragment="nav">
 
-    <nav class="navbar navbar-expand-sm bg-light fixed-top">
+    <nav class="navbar navbar navbar-expand-lg navbar-dark" >
 
-        <ul class="navbar-nav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <li class="nav-item nav-link"> Welcome <span></span>
-            </li>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!--</nav>-->
+            <ul class="nav navbar-nav ml-auto">
 
-            <li class="nav-item">
-                <a class="nav-link" href="/">All Pets</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/lostPets">Lost Pets</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/foundPets">Found Pets</a>
-            </li>
+                <li sec:authorize="isAuthenticated()" class="nav-item text-light active" th:inline="text">
+                    <a class="nav-link text-white" href="#">Welcome [[${#authentication.name}]]!</a>
+                </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="/register">Register</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/login">Login</a>
-            </li>
+                <li class="nav-item">
+                    <a sec:authorize="isAuthenticated()" class="nav-link text-white" href="/allpets">All Pets </a>
+                </li>
 
-        </ul>
+                <li class="nav-item">
+                    <a sec:authorize="isAuthenticated()" class="nav-link text-white" href="/lostpets">Lost Pets </a>
+                </li>
 
+                <li class="nav-item">
+                    <a sec:authorize="isAuthenticated()" class="nav-link text-white" href="/foundpets">Found Pets </a>
+                </li>
+
+                <li sec:authorize="isAuthenticated()" class="nav-item text-light active" th:inline="text">
+                    <a class="nav-link text-white" href="/addlostpet"> Add Lost Pets </a>
+                </li>
+
+                <li sec:authorize="isAuthenticated()" class="nav-item text-light active" th:inline="text">
+                    <a class="nav-link text-white" href="/logout"> Log out</a>
+                </li>
+
+                <li class="nav-item">
+                    <a sec:authorize="!isAuthenticated()" class="nav-link text-white" href="/home">All Pets </a>
+                </li>
+
+                <li class="nav-item">
+                    <a sec:authorize="!isAuthenticated()" class="nav-link text-white" href="/lostpets">Lost Pets </a>
+                </li>
+
+                <li class="nav-item">
+                    <a sec:authorize="!isAuthenticated()" class="nav-link text-white" href="/foundpets">Found Pets </a>
+                </li>
+
+                <li class="nav-item">
+                    <a sec:authorize="!isAuthenticated()" class="nav-link text-white" href="/register">Register</a>
+                </li>
+
+                <li class="nav-item">
+                    <a sec:authorize="!isAuthenticated()" class="nav-link text-white" href="/login">Login</a>
+                </li>
+
+            </ul>
+        </div>
     </nav>
-
 </div>
 <div class="space"></div>
 </div>
@@ -51,7 +82,7 @@
 
 <footer th:fragment="footer">
     <div class="footer">
-        <p> Lost Pet Application </p>
+        <p> Copyright 2018</p>
     </div>
 </footer>
 </body>

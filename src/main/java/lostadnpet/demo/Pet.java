@@ -14,6 +14,7 @@ public class Pet {
     private String date;
     private String description;
     private String status;
+    private String image;
 
     @ManyToOne
     private User user;
@@ -22,11 +23,11 @@ public class Pet {
     public Pet() {
     }
 
-    public Pet(String name, String date, String description, String status, User user) {
+    public Pet(String name, String date, String description, String statu, User user) {
         this.setName(name);
         this.setDate(date);
         this.setDescription(description);
-        this.setStatus(status);
+        this.setStatus(statu);
         this.setUser(user);
     }
 
@@ -76,5 +77,13 @@ public class Pet {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }
