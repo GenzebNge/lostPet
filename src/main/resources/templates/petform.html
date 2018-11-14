@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <th:block th:insert="base :: header"></th:block>
+</head>
+<body>
+<div th:replace="base :: nav"></div>
+
+<form action="/add"
+      enctype="multipart/form-data"
+      method="post">
+
+    <input type="hidden" id="id" name="id">
+
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input class="form-control" type="text" id="name" name="name"/>
+    </div>
+
+    <div class="form-group">
+        <label for="dateLost">Date Lost:</label>
+        <input class="form-control-sm" type="date"
+               id="dateLost" name="dateLost"/>
+    </div>
+
+    <div class="form-group">
+        <label for="description">Description:</label>
+
+        <input class="form-control" type="text" id="description" name="description"/>
+    </div>
+
+    <div class="form-group">
+        <label for="status">Status:</label>
+        <select class="form-control" type="text" id="status" name="status">
+            <option value="">Select</option>
+            <option value="Lost">Lost</option>
+            <option value="Found">Found</option>
+        </select>
+    </div>
+
+    <input type="hidden" value="" name="hiddenImgURL"/>
+
+    <div class="form-group">
+        <input class="form-control-file" type="file" name="file"/>
+        (Update or add new photo)
+    </div>
+
+    <input class="submit-btn" type="submit" value="Submit"/>
+</form>
+<div class="emptySpace"></div>
+<div th:replace="base :: footer"></div>
+</body>
+</html>

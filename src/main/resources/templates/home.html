@@ -1,189 +1,48 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/extras/spring-security">
+
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
     <title>Title</title>
     <th:block th:insert="base :: header"></th:block>
+
 </head>
 <body>
 <div th:replace="base :: nav"></div>
 
-<div class="container">
+<div class="jumbotron text-center">
+    <h5>Help Find our Lost Furry Friends</h5>
+</div>
 
+<div class="row text-center">
     <div>
 
-        <nav class="navbar navbar-expand-sm bg-light fixed-top">
+        <div class="col-sm-20">
+            <div class="card text-center">
+                <div class="card-header text-center">
+                    <strong><div>Minions is Missing!</div></strong>
+                    <div>Lost on <span>2018-11-04</span></div>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <img class="card-img-top user-img" src="http://res.cloudinary.com/dxs9ed6s7/image/upload/v1542118977/cf7kxiqikaohcdpcyhfc.jpg" alt="pet">
+                    </div>
+                    <div>Yellow bean shaped guys</div>
+                    <strong>Status: <span>Lost</span></strong>
+                    <div>
+                        <!-- Show update/mark found button only if
+                        logged in user is the one who created the post or the admin-->
 
-            <!-- Links -->
-            <ul class="navbar-nav">
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/">All Pets</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/lostPets">Lost Pets</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/foundPets">Found Pets</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/register">Register</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/login">Login</a>
-                </li>
-                <!--Only the admin can see a list of users-->
-
-
-            </ul>
-
-        </nav>
-
-        <div class="jumbotron text-center">
-            <h1>Help Find our Lost Furry Friends &#9785;</h1>
-        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end div class col-->
 
     </div>
 
-    <hr/>
-
-    <!--<input type="hidden" value="" name="userID">-->
-
-    <!--<div class="row text-center">-->
-        <!--<div>-->
-
-            <!--<div class="col-sm-3">-->
-                <!--<div class="card text-center">-->
-                    <!--<div class="card-header text-center">-->
-                        <!--<strong><div>fido is Missing!</div></strong>-->
-                        <!--<div>Lost on <span>2018-11-24</span></div>-->
-                    <!--</div>-->
-                    <!--<div class="card-body">-->
-                        <!--<div>-->
-                            <!--<img class="card-img-top user-img" src="http://res.cloudinary.com/dxs9ed6s7/image/upload/v1542089460/eefnfduivu7zipe56xtt.jpg" alt="pet">-->
-                        <!--</div>-->
-                        <!--<div>cute, spotted and soft</div>-->
-                        <!--<strong>Status: <span>Lost</span></strong>-->
-
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>&lt;!&ndash;end div class col&ndash;&gt;-->
-
-        <!--</div>-->
-        <!--<div>-->
-
-            <!--<div class="col-sm-3">-->
-                <!--<div class="card text-center">-->
-                    <!--<div class="card-header text-center">-->
-                        <!--<strong><div>lily is Missing!</div></strong>-->
-                        <!--<div>Lost on <span>2018-11-13</span></div>-->
-                    <!--</div>-->
-                    <!--<div class="card-body">-->
-
-                        <!--<div>cocker spaniel</div>-->
-                        <!--<strong>Status: <span>Found</span></strong>-->
-
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>&lt;!&ndash;end div class col&ndash;&gt;-->
-
-        <!--</div>-->
-        <!--<div>-->
-
-            <!--<div class="col-sm-3">-->
-                <!--<div class="card text-center">-->
-                    <!--<div class="card-header text-center">-->
-                        <!--<strong><div>Bobert is Missing!</div></strong>-->
-                        <!--<div>Lost on <span>2018-11-14</span></div>-->
-                    <!--</div>-->
-                    <!--<div class="card-body">-->
-
-                        <!--<div>rhino</div>-->
-                        <!--<strong>Status: <span>Found</span></strong>-->
-
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>&lt;!&ndash;end div class col&ndash;&gt;-->
-
-        <!--</div>-->
-        <!--<div>-->
-
-            <!--<div class="col-sm-3">-->
-                <!--<div class="card text-center">-->
-                    <!--<div class="card-header text-center">-->
-                        <!--<strong><div>Tom is Missing!</div></strong>-->
-                        <!--<div>Lost on <span>2018-11-08</span></div>-->
-                    <!--</div>-->
-                    <!--<div class="card-body">-->
-
-                        <!--<div>brown dog</div>-->
-                        <!--<strong>Status: <span>Found</span></strong>-->
-
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>&lt;!&ndash;end div class col&ndash;&gt;-->
-
-        <!--</div>-->
-        <!--<div>-->
-
-            <!--<div class="col-sm-3">-->
-                <!--<div class="card text-center">-->
-                    <!--<div class="card-header text-center">-->
-                        <!--<strong><div>Tom is Missing!</div></strong>-->
-                        <!--<div>Lost on <span>2018-11-13</span></div>-->
-                    <!--</div>-->
-                    <!--<div class="card-body">-->
-
-                        <!--<div>dog</div>-->
-                        <!--<strong>Status: <span>Lost</span></strong>-->
-
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>&lt;!&ndash;end div class col&ndash;&gt;-->
-
-        <!--</div>-->
-        <!--<div>-->
-
-            <!--<div class="col-sm-3">-->
-                <!--<div class="card text-center">-->
-                    <!--<div class="card-header text-center">-->
-                        <!--<strong><div>Jerry is Missing!</div></strong>-->
-                        <!--<div>Lost on <span>2018-11-14</span></div>-->
-                    <!--</div>-->
-                    <!--<div class="card-body">-->
-
-                        <!--<div>dog</div>-->
-                        <!--<strong>Status: <span>Lost</span></strong>-->
-
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>&lt;!&ndash;end div class col&ndash;&gt;-->
-
-        <!--</div>-->
-        <!--<div>-->
-
-            <!--<div class="col-sm-3">-->
-                <!--<div class="card text-center">-->
-                    <!--<div class="card-header text-center">-->
-                        <!--<strong><div>cat is Missing!</div></strong>-->
-                        <!--<div>Lost on <span>2018-11-13</span></div>-->
-                    <!--</div>-->
-                    <!--<div class="card-body">-->
-
-                        <!--<div>cat</div>-->
-                        <!--<strong>Status: <span>Lost</span></strong>-->
-
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>&lt;!&ndash;end div class col&ndash;&gt;-->
-
-        <!--</div>&lt;!&ndash;end div th:each&ndash;&gt;-->
-    <!--</div>&lt;!&ndash;end div class row&ndash;&gt;-->
-
-</div>
 <div class="emptySpace"></div>
 <div class="emptySpace"></div>
+
 <div th:replace="base:: footer"></div>
 </body>
 </html>

@@ -27,42 +27,43 @@ public class HomeController {
         return "home";
     }
 
-//    @RequestMapping("/register")
-//    public String registerUser(Model model){
-//        model.addAttribute("user", new User());
-//        return "registerform";
-//    }
-//
-//    @PostMapping("/register")
-//    public String processRegister(@Valid @ModelAttribute("user") User user, BindingResult result, Model model){
-//        if (result.hasErrors()){
-//            return "registerform";
-//        }
-//        else {
-//            userRepository.save(user);
-//            model.addAttribute("user", "User account created");
-//        }
-//        return "redirect:/";
-//    }
-//
-//    @RequestMapping("/login")
-//    public String login(){
-//        return "home";
-//    }
-//
-//    @RequestMapping("/petform")
-//    public String addLostPet(Model model){
-//        model.addAttribute("pet", new Pet());
-//        return "petform";
-//    }
-//
-//    @PostMapping("/addlostpet")
-//    public String processMessage(@Valid @ModelAttribute("message") Pet pet, BindingResult result){
-//        if (result.hasErrors()){
-//            return "messageform";
-//        }
-//        pet.setUser(userService.getUser());
-//        petRepository.save(pet);
-//        return "redirect:/";
-//    }
+    @RequestMapping("/register")
+    public String registerUser(Model model){
+        model.addAttribute("user", new User());
+        return "registerform";
+    }
+
+    @PostMapping("/register")
+    public String processRegister(@Valid @ModelAttribute("user") User user, BindingResult result, Model model){
+        if (result.hasErrors()){
+            return "registerform";
+        }
+        else {
+            userRepository.save(user);
+            model.addAttribute("user", "User account created");
+        }
+        return "redirect:/";
+    }
+
+    @RequestMapping("/login")
+    public String login(){
+        return "loginform";
+    }
+
+    @RequestMapping("/petform")
+    public String addLostPet(Model model){
+        model.addAttribute("pet", new Pet());
+        return "petform";
+    }
+
+    @PostMapping("/addlostpet")
+    public String processMessage(@Valid @ModelAttribute("message") Pet pet, BindingResult result){
+        if (result.hasErrors()){
+            return "petform";
+        }
+        pet.setUser(userService.getUser());
+        petRepository.save(pet);
+        return "redirect:/";
+    }
+
 }

@@ -17,6 +17,7 @@ public class UserService {
     RoleRepository roleRepository;
 
 
+    @Autowired
     public UserService (UserRepository userRepository){
         this.userRepository = userRepository;
     }

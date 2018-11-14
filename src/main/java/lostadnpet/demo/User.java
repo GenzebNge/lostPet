@@ -36,7 +36,7 @@ public class User {
     private Collection<Role>roles;
 
     @ManyToMany
-    private Set<Pet> messages;
+    private Set<Pet> pets;
 
     public User(){
 
@@ -117,11 +117,11 @@ public class User {
         this.roles = roles;
     }
 
-    public Set<Pet> getMessages() {
-        return messages;
+    public Set<Pet> getPets() {
+        return pets;
     }
 
-    public void setMessages(Set<Pet> messages) {
-        this.messages = messages;
+    public void setPets(Set<Pet> pets) {
+        this.pets = pets;
     }
 }
